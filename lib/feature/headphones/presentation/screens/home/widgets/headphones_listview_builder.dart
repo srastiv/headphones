@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../data/models/category_model.dart';
 import '../../../constants/color/colors.dart';
+import '../../../constants/textstyles.dart';
 import '../../../widgets/custom_iconbutton.dart';
 
 class ListOfHeadPhonesListViewWidget extends StatelessWidget {
@@ -24,7 +25,6 @@ class ListOfHeadPhonesListViewWidget extends StatelessWidget {
           return Column(
             children: [
               Container(
-                //  margin: const EdgeInsets.only(bottom: 12),
                 padding:
                     const EdgeInsets.symmetric(vertical: 16.5, horizontal: 16),
                 height: 149.5,
@@ -59,21 +59,22 @@ class ListOfHeadPhonesListViewWidget extends StatelessWidget {
                       children: [
                         SizedBox(
                           child: Row(
-                            // mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                categoryList[index].productName,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
+                              FittedBox(
+                                child: Text(
+                                  categoryList[index].productName,
+                                  //  textScaleFactor: 1,
+                                  style: kw500size16,
                                 ),
                               ),
-                              SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.11),
+                              const SizedBox(width: 20
+                                  // MediaQuery.of(context).size.width * 0.11,
+                                  ),
                               CustomIconButtonWidget(
                                 radius: 5,
-                                length: 24,
+                                iconSize: 13,
                                 shadow: const [
                                   BoxShadow(
                                     offset: Offset(0, 1),
@@ -95,47 +96,42 @@ class ListOfHeadPhonesListViewWidget extends StatelessWidget {
                           width: 171,
                           child: Text(
                             categoryList[index].productDescription,
+                            //  textScaleFactor: 1,
                             maxLines: 3,
-                            style: const TextStyle(
-                                color: kTextGrey,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12),
+                            style: kw400size16colTextGrey,
                           ),
                         ),
-                        const SizedBox(height: 14.5),
-                        Row(
-                          children: [
-                            Text(
-                              "\$ ${categoryList[index].price.toString()}",
-                              style: const TextStyle(
-                                color: kMagenta,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                              ),
-                            ),
-                            const SizedBox(width: 47),
-                            SizedBox(
-                              height: 24,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: kMagenta,
-                                  elevation: 0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
+                        // const SizedBox(height: 14.5),
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text("\$ ${categoryList[index].price.toString()}",
+                                  textScaleFactor: 1,
+                                  style: kw500size16colMagenta),
+                              const SizedBox(width: 47),
+                              SizedBox(
+                                height: 24,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: kMagenta,
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
                                   ),
-                                ),
-                                onPressed: () {
-                                  var product = categoryList[index];
-                                  context.go("/products/$product",
-                                      extra: product);
-                                },
-                                child: const Text(
-                                  "Buy",
-                                  style: TextStyle(color: kWhite),
+                                  onPressed: () {
+                                    var product = categoryList[index];
+                                    context.go("/products/$product",
+                                        extra: product);
+                                  },
+                                  child: const Text("Buy",
+                                      textScaleFactor: 1,
+                                      style: kw500size14colWhite),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),

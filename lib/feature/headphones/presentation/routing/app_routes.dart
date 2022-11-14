@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:headphones/feature/headphones/data/models/category_model.dart';
-import 'package:headphones/feature/headphones/presentation/screens/home/homescreen.dart';
-import 'package:headphones/feature/headphones/presentation/screens/others/otherscreens.dart';
-import 'package:headphones/feature/headphones/presentation/screens/product_page/product_screen.dart';
-import 'package:headphones/feature/headphones/presentation/widgets/navigation_bar.dart';
+
+import '../../data/models/category_model.dart';
+import '../screens/home/homescreen.dart';
+import '../screens/interest/interest.dart';
+import '../screens/others/otherscreens.dart';
+import '../screens/product_page/product_screen.dart';
+import '../widgets/navigation_bar.dart';
 
 class AppRoutes {
   static final GoRouter router = GoRouter(

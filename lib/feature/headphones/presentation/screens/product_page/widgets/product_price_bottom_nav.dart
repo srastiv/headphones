@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:headphones/feature/headphones/data/models/category_model.dart';
-import 'package:headphones/feature/headphones/presentation/constants/color/colors.dart';
+
+import '../../../../data/models/category_model.dart';
+import '../../../constants/color/colors.dart';
+import '../../../constants/textstyles.dart';
 
 class ProductPriceBottomNavWidget extends StatelessWidget {
   const ProductPriceBottomNavWidget({
@@ -32,10 +34,7 @@ class ProductPriceBottomNavWidget extends StatelessWidget {
                     )!
                         .toStringAsFixed(0),
                     //  text: product.price.toStringAsFixed(0),
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18,
-                        color: kTextGrey),
+                    style: kw400size18colGrey,
                   ),
                 ],
               ),
@@ -56,10 +55,8 @@ class ProductPriceBottomNavWidget extends StatelessWidget {
                   children: [
                     const Text(
                       "Add to Card  ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                      ),
+                      textScaleFactor: 1,
+                      style: kw500size18,
                     ),
                     SvgPicture.asset("assets/icons/arrow.svg"),
                   ],

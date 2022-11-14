@@ -1,23 +1,24 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:headphones/feature/headphones/presentation/constants/color/colors.dart';
+import '../constants/color/colors.dart';
 
 class CustomIconButtonWidget extends StatelessWidget {
-  CustomIconButtonWidget(
+  const CustomIconButtonWidget(
       {Key? key,
       required this.icon,
-      required this.length,
+      required this.iconSize,
       required this.radius,
+      this.length,
       this.shadow,
       this.onpressed})
       : super(key: key);
   final Widget icon;
-  final double length;
+  final double iconSize;
   final double radius;
-  void Function()? onpressed;
+  final double? length;
 
-  List<BoxShadow>? shadow;
+  final void Function()? onpressed;
+
+  final List<BoxShadow>? shadow;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,9 @@ class CustomIconButtonWidget extends StatelessWidget {
         border: Border.all(color: kLightGrey),
       ),
       child: IconButton(
+        iconSize: iconSize,
         color: kWhite,
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.all(0),
         onPressed: onpressed,
         icon: icon,
       ),

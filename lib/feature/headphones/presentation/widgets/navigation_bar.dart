@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:headphones/feature/headphones/presentation/constants/color/colors.dart';
-import 'package:headphones/feature/headphones/presentation/screens/home/homescreen.dart';
-import 'package:headphones/feature/headphones/presentation/screens/others/otherscreens.dart';
+
+import '../constants/color/colors.dart';
+import '../screens/home/homescreen.dart';
+import '../screens/interest/interest.dart';
+import '../screens/others/otherscreens.dart';
 
 class CustomBottomNavigationBarWidget extends StatefulWidget {
   const CustomBottomNavigationBarWidget({
@@ -64,6 +66,10 @@ class _CustomBottomNavigationBarWidgetState
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                // bottomNavIcon(0, "assets/icons/Home.svg", "Home"),
+                // bottomNavIcon(1, "assets/icons/Category.svg", "Categories"),
+                // bottomNavIcon(2, "assets/icons/Heart.svg", "Interests"),
+                // bottomNavIcon(3, "assets/icons/Profile.svg", "Profile"),
                 Expanded(
                   child: IconButton(
                     onPressed: () {

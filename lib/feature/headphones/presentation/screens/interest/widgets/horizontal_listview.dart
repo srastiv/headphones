@@ -4,20 +4,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../data/models/category_model.dart';
 import '../../../constants/color/colors.dart';
 
-class CategoryListViewBuilderWidget extends StatefulWidget {
-  const CategoryListViewBuilderWidget({
+class HorizontalListView extends StatefulWidget {
+  const HorizontalListView({
     Key? key,
- 
   }) : super(key: key);
-  
 
   @override
-  State<CategoryListViewBuilderWidget> createState() =>
+  State<HorizontalListView> createState() =>
       _CategoryListViewBuilderWidgetState();
 }
 
-class _CategoryListViewBuilderWidgetState
-    extends State<CategoryListViewBuilderWidget> {
+class _CategoryListViewBuilderWidgetState extends State<HorizontalListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,24 +27,25 @@ class _CategoryListViewBuilderWidgetState
               padding: const EdgeInsets.all(8),
               height: 44,
               decoration: BoxDecoration(
-                border: Border.all(color: kLightGrey),
                 borderRadius: BorderRadius.circular(12),
-                color: categoryList[index].isSelectedOrNot ? kMagenta : kWhite,
+                color:
+                    categoryList[index].isSelectedOrNot ? kWhite : kOliveGreen,
               ),
               child: Row(
                 children: [
                   SvgPicture.asset(
                     categoryList[index].svgPath,
-                    color:
-                        categoryList[index].isSelectedOrNot ? kWhite : kBlack,
+                    color: categoryList[index].isSelectedOrNot
+                        ? kOliveGreen
+                        : kWhite,
                   ),
                   const SizedBox(width: 8),
                   Text(
                     categoryList[index].categoryName,
                     style: TextStyle(
                         color: categoryList[index].isSelectedOrNot
-                            ? kWhite
-                            : kBlack),
+                            ? kOliveGreen
+                            : kWhite),
                   ),
                 ],
               ),
@@ -63,7 +61,7 @@ class _CategoryListViewBuilderWidgetState
         itemCount: categoryList.length,
         scrollDirection: Axis.horizontal,
         separatorBuilder: (BuildContext context, int index) =>
-            const SizedBox(width: 12),
+            const SizedBox(width: 7),
       ),
     );
   }

@@ -7,3 +7,4 @@ const kMagenta = Color.fromARGB(255, 229, 70, 96);
 const kLightPink = Color.fromARGB(255, 246, 234, 236);
 const kBlack = Color.fromARGB(255, 13, 13, 13);
 const kWhite = Colors.white;
+const kOliveGreen = Color.fromARGB(255, 15, 28, 4);

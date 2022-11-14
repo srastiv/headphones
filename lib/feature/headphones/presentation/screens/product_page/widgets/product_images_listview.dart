@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:headphones/feature/headphones/data/models/category_model.dart';
-import 'package:headphones/feature/headphones/presentation/constants/color/colors.dart';
+
+import '../../../../data/models/category_model.dart';
+import '../../../constants/color/colors.dart';
 
 class ProductImagesListViewWidget extends StatelessWidget {
   const ProductImagesListViewWidget({

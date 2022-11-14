@@ -13,18 +13,7 @@ class Category extends StatelessWidget {
   }
 }
 
-class Interest extends StatelessWidget {
-  const Interest({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("INTEREST"),
-      ),
-    );
-  }
-}
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);

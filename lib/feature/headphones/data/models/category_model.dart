@@ -58,4 +58,14 @@ List<CategoryModel> categoryList = [
     isSelectedOrNot: false,
     price: 520,
   ),
+  CategoryModel(
+    categoryName: "Mouse",
+    svgPath: "assets/icons/mouse.svg",
+    imagePath: "assets/images/front.png",
+    productName: "Bose QC-500",
+    productDescription:
+        "Over Ear, Wireless Bluetooth Headphones with Built-In Microphone",
+    isSelectedOrNot: false,
+    price: 520,
+  ),
 ];
